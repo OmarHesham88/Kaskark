@@ -359,7 +359,10 @@ nav li:hover {
     }
 
     .contact-number div span{
-        font-size:normal;
+        font-size:small;
+    }
+    .contact-number div img{
+        width: 20px;
     }
     .contact-number a{
         font-size:x-large;
