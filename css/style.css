@@ -235,6 +235,8 @@ nav li:hover {
 .menu-toggle {
     display: none;
     border: none;
+    font-size:30px;
+    color:white;
     height: 50px;
     width: 50px;
     cursor: pointer;
@@ -242,10 +244,7 @@ nav li:hover {
     background-color: var(--secondary-color) !important;
     transform: translate(30px,10px);
   }
-  .menu-icon{
-    font-size:30px;
-    color:white;
-  }
+
   .menu-toggle:hover{
     transform:scale(1.05) translate(30px,10px);
   }
