@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable=no>
+    <link rel="shortcut icon" href="./images/icon-short.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="./css/all.min.css">
+    <!-- slick plugin -->
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/slick-theme.css">
+    <!-- own css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+
+    <title>كاس كرك</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gulzar&display=swap');
+    </style>
+</head>
+
+
+<body>
+    <!-- Header -->
+
+    <header class="header container-fluid">
+        <div class="d-flex justify-content-between align-items-center header-container" style="margin: auto;">
+            <div class="header-left-side justify-content-between d-flex">
+                <a href="./index.html">
+                    <img src="images/kas karak logo.png" class="header-logo" height="140px" alt="logo">
+                </a>
+                <nav class="d-flex align-items-center mx-4">
+                    <div class="container d-flex align-items-center">
+                        <ul class="header-nav d-flex flex-nowrap">
+                            <a href="./index.html">
+                                <li class="active">
+                                    <img src="images/Home_light -.png" width="22px">
+                                        الرئيسية
+                                </li>
+                            </a>
+                            <a href="./index.html">
+                                <li>
+                                    <img src="images/notebook_light.png" width="22px">
+                                    قائمة الطعام
+                                </li>
+                            </a>
+                            <a href="./index.html">
+                                <li>
+                                    <img src="images/Pin_alt_light.png" width="22px">
+                                    الفروع
+                                </li>
+                            </a>
+                            <a href="./index.html">
+                                <li >
+                                    <img src="images/Phone_light.png" width="22px">
+                                    تواصل معنا
+                                </li>
+                            </a>
+                            <a href="./index.html">
+                                <li >
+                                    <img src="images/Clock_light.png" width="22px">
+                                    مواعيد العمل
+                                </li>
+                            </a>
+                            <a href="./index.html">
+                                <li>
+                                    <img src="images/info_light.png" width="22px">
+                                    من نحن
+                                </li>
+                            </a>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div style="text-align: center;" class="contact-number">
+                <div>
+                    <img src="images/Component.png" width="25px">
+                    <span style="font-weight: bolder;">للحجز المسبق</span>
+                </div>
+                <a href="tel:8123999950">8123999950</a>
+            </div>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </header>
+
+    <!-- SideBar -->
+    
+    <div class="sidebar">
+        <div class="d-flex flex-row-reverse justify-content-between mb-3">
+            <button type="button" class="btn-close" aria-label="Close" onclick="toggleSidebar()"></button>
+        </div>
+        <div class="w-100 d-flex justify-content-center">
+            <a href="./index.html" class="logo d-flex justify-content-center align-items-center">
+                <img src="images/white bg kas karak logo.jpg" height="130px" alt="logo">
+            </a>        
+        </div>
+        <ul class="mt-3">
+            <a href="./index.html" class=" test">
+            <li class="active">
+                <i class="fas fa-home"></i>
+                الرئيسية
+                </li>
+            </a>
+            <a href="./index.html" class=" test">
+            <li class="active">
+                <i class="fas fa-utensils"></i>
+                قائمة الطعام
+            </li>
+            </a>
+            <a href="./index.html" class=" test">
+            <li class="active">
+                <i class="fas fa-map-marker-alt"></i>
+                الفروع
+            </li>
+            </a>
+            <a href="./index.html" class=" test">
+            <li class="active">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                تواصل معنا
+            </li>
+            </a>
+            <a href="./index.html" class=" test">
+            <li class="active">
+                <i class="fas fa-clock"></i>
+                مواعيد العمل
+            </li>
+            </a>
+            <a href="./index.html" class=" test">
+            <li class="active">
+                <i class="fas fa-info-circle"></i>
+                من نحن
+            </li>
+            </a>
+        </ul>
+    </div>
+
+    <!-- Landing Page -->
+    
+    <div class="container-fluid d-flex landing-page position-relative p-0 mt-3" style="z-index:0; ">
+        <div class="landing-page-text">استمتع بطعم الفطائر المميزه</div>
+
+            <div class="image-grid">
+                <img src="images/Rectangle 4133.png" alt="Image 1">
+                <img src="images/Rectangle 412.png" alt="Image 1">
+                <img src="images/Rectangle 4135.png" alt="Image 1">
+                <img src="images/Rectangle 41.png" alt="Image 1">
+                <img src="images/Rectangle 4131.png" alt="Image 1">
+            </div>
+    </div>
+
+    <!-- products -->
+    
+    <div class="container-fluid products p-3">
+        <div class="m-5 products-container" style="text-align: center; background-color: white; padding: 40px 0;">
+            <h2 style="font-weight: bold;">منتجاتنا</h2>
+            <p class="p-2 mb-3 small-text">فطيرة بالير - شاى كرك</p>
+            <div class="products-items">
+                <div class="products-item">
+                    <img src="images/Ellipse 213.png" class="product-image" alt="Product Image">
+                    <h5 class="mt-2">فطيرة جبنة حلوم مشوي</h5>
+                    <p>10 ريال</p>
+                    <span>
+                        <i class="fa-solid fa-fire"></i>
+                        250
+                    </span>
+                </div>
+                <div class="products-item">
+                    <img src="images/Ellipse 211.png" class="product-image" alt="Product Image">
+                    <h5 class="mt-2">فطيرة بيض بدون اضافات</h5>
+                    <p>10 ريال</p>
+                    <span>
+                        <i class="fa-solid fa-fire"></i>
+                        250
+                    </span>
+                </div>
+                <div class="products-item">
+                    <img src="images/Ellipse 212.png" class="product-image" alt="Product Image" width="200px" height="200px">
+                    <h5 class="mt-2">فطيرة جبنة كيري مع زعتر</h5>
+                    <p>10 ريال</p>
+                    <span>
+                        <i class="fa-solid fa-fire"></i>
+                        250
+                    </span>
+                </div>
+                <div class="products-item">
+                    <img src="images/Ellipse 214.png" class="product-image" alt="Product Image">
+                    <h5 class="mt-2">فطيرة جبنة شيدر مع عسل</h5>
+                    <p>10 ريال</p>
+                    <span>
+                        <i class="fa-solid fa-fire"></i>
+                        250
+                    </span>
+                </div>
+                <div class="products-item">
+                    <img src="images/Ellipse 215.png" class="product-image" alt="Product Image">
+                    <h5 class="mt-2">فطيرة بيض مع جبنتين</h5>
+                    <p>12 ريال</p>
+                    <span>
+                        <i class="fa-solid fa-fire"></i>
+                        250
+                    </span>
+                </div>
+            </div>
+            <button class="btn btn-danger m-4 more-button">المزيد</button>
+        </div>
+    </div>
+    
+    
+    <!-- Section -->
+
+    <div class="container-fluid section p-2 d-flex flex-column align-items-center m-0">
+            <h2 class="p-3" style="width: 350px;">لدينا شاى الكرك و الفطائر المحشوة اللذيذة</h2>
+            <div class="position-relative section-images" style="height:180px;">
+                <img src="images/Rectangle 1.png" width="250px" height="250px">
+                <img src="images/Rectangle 3.png" width="250px" height="250px">
+                <img src="images/Rectangle 2.png" width="250px" height="250px">
+            </div>
+            <div>
+                <h2 class="p-2 partners-heading">تطبيقات التوصيل</h2>
+                <p class="p-1 small-text">نوصل لك أيمنا كنت مع شركائنا الموثوقين</p>
+
+            </div>
+    </div>
+    <div class="fluid-container d-flex justify-content-center carousel-main-container" style="overflow: hidden;">
+    <div class="carousel-container">
+        <div class="arrow arrow-left" onclick="prevImage()">
+            <img src="images/Icon 2.png">
+        </div>
+        <div class="carousel">
+            <img src="images/jahez.png" alt="Image 1" class="layer-1">
+            <img src="images/مرسول.png" alt="Image 2" class="layer-2-left">
+            <img src="images/تو يو.png" alt="Image 3" class="layer-2-right">
+            <img src="images/شفز.png" alt="Image 4" class="layer-3-left">
+            <img src="images/شقرد.png" alt="Image 5" class="layer-4-right">
+            <img src="images/hunger.png" alt="Image 5" class="layer-3-right">
+        </div>
+        
+        <div class="arrow arrow-right" onclick="nextImage()">
+            <img src="images/Icon.png">
+        </div>
+    </div>
+    </div>
+
+        <!-- Footer -->
+         
+        <footer>
+        <div class="container d-flex justify-content-between position-relative p-3 flex-wrap footer">
+            <div class="d-flex align-items-end footer-right">
+            <a href="">
+                <span class="footer-policy">سياسة الخصوصية </span>
+            </a>
+            <a href="">
+                <span>شروط الاستخدام</span>
+            </a>
+            </div>
+            <div class="d-flex flex-column footer-center align-items-center justify-content-start">
+                <a href="./index.html" class="logo d-flex justify-content-center align-items-center">
+                    <img src="images/white bg kas karak logo.jpg" height="100px" alt="logo">
+                </a>
+                <span>جميع الحقوق محفوظة لموقع كاس كرك 2024</span>
+            </div>
+            <div class="d-flex align-items-center flex-column footer-left justify-content-end">
+                <div class="footer-icons mb-4">
+                    <a href="">
+                        <img src="images/فيس بوك.png" width="18px">
+                    </a>
+                    <a href="">
+                        <img src="images/تويتر.png" width="25px">
+                    </a>
+                    <a href="">
+                        <img src="images/انستجرام.png" width="25px">
+                    </a>
+                    <a href="">
+                        <img src="images/تيك توك.png" width="25px">
+                    </a>
+                    <a href="">
+                        <img src="images/سناب شات.png" width="25px">
+                    </a>
+                </div>
+                <a href="" class="d-flex flex-column align-items-center">
+                    <span>
+                    <img src="images/لوكيشن.png" width="30px">
+                    فرع كاس كرك
+                    </span>
+                    <span class="footer-address">العنوان: جدة شارع الأربعين</span>
+                </a>
+            </div>
+
+        </div>
+        </footer>
+        
+    <!-- Back to Top Button -->
+    <!-- <button class="back-to-top" id="backToTopBtn"></button> -->
+
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+        
+</body>
+
+</html>
