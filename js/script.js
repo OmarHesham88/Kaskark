@@ -68,3 +68,8 @@ myInterval = setInterval(nextImage, 2000); // Reset the interval to start counti
 
 }
 
+  // prevent zooming on Iphone
+  document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+});
+
