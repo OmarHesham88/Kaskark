@@ -250,10 +250,10 @@ nav li:hover {
     }
     
     .menu-toggle:hover{
-        transform:scale(1.05) translate(30px,10px);
+        transform:translate(30px,10px) scale(1.05);
     }
     .sidebar {
-        position: absolute;
+    position: absolute;
     overflow:hidden;
     position:fixed;
     top: 0;
@@ -281,8 +281,13 @@ nav li:hover {
   .sidebar .logo{
     background-color: white;
     width: 150px;
-    height: 150px;
+    height: 160px;
     border-radius:20px;
+    position:relative;
+  }
+  .sidebar .logo img{
+    position:absolute;
+    top:-20px;
   }
   .btn-close{
     background-color: white;
