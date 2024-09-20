@@ -244,6 +244,10 @@ nav li:hover {
     background-color: var(--secondary-color) !important;
     transform: translate(30px,10px);
   }
+  .menu-toggle i{
+    font-size:30px;
+    color:white;
+  }
 
   .menu-toggle:hover{
     transform:scale(1.05) translate(30px,10px);
