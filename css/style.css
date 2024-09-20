@@ -272,9 +272,7 @@ nav li:hover {
     height: 50px;
     width: 50px;
     font-size: 28px;
-    padding:5px;
-    text-align: center;
-    vertical-align: middle;
+    padding-top:6px;
     cursor: pointer;
     border-radius: 5px;
     background-color: var(--secondary-color) !important;
