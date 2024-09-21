@@ -1183,6 +1183,13 @@ footer::before{
     left: 8.5%;
     width: 15%;
 }
+.about-text{
+    color:#BF3337;
+    font-size:large;
+    font-weight:500;
+    padding:20px;
+    line-height: 30px;
+}
 
 
 
