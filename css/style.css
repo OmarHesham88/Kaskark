@@ -1193,6 +1193,7 @@ footer::before{
     font-weight:500;
     padding:20px;
     line-height: 30px;
+    margin-bottom:60px;
 }
 
 
@@ -1240,6 +1241,13 @@ footer::before{
     box-shadow: 0 4px 8px rgba(90, 210, 226, 0.5);
     width: 350px;
     height: 350px;
+}
+.branch-box i{
+    font-size:23px;
+    color:#C13634;
+    padding-left:10px;
+    text-align:center;
+    transform:translate(-3px,0);
 }
 
 @media(max-width:750px){
