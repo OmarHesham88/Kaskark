@@ -1243,9 +1243,9 @@ footer::before{
     height: 350px;
 }
 .branch-box i{
-    font-size:23px;
+    font-size:20px;
     color:#C13634;
-    padding-left:10px;
+    padding-left:6px;
     text-align:center;
     transform:translate(-3px,0);
 }
