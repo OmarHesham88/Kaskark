@@ -1354,6 +1354,9 @@ footer::before{
     font-size:20px;
 }
 
+.worktime-slots i{
+    margin-left:8px;
+}
 .worktime-box  div:nth-child(2).worktime-slots{
     font-weight: bold;
     min-height: 120px;
@@ -1389,6 +1392,7 @@ footer::before{
         width:22px;
         margin-left:5px;
     }
+
 }
 
 
