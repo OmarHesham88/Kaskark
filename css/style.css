@@ -1382,7 +1382,7 @@ footer::before{
         gap:30px;
     }
     .worktime-box{
-        width: 200px;
+        width: 280px;
         padding:10px 10px 10px 10px;
         min-height: 30px;
     }
@@ -1554,7 +1554,8 @@ textarea {
 }
   @media(max-width:800px){
     .contact-box{
-        width:400px;
+        padding:0;
+        width:460px;
     }
     .contact-box button{
         font-size:14px !important;
@@ -1582,6 +1583,8 @@ textarea {
     }
     .contact-box h2{
         text-align: center;
+        padding: 10px 10px;
+        font-size:large;
     }
     .contact-item:nth-child(2) a{
         font-size:24px;
@@ -1592,18 +1595,23 @@ textarea {
   }
   @media(max-width:500px){
     .contact-box{
-        width:280px;
+        width:310px;
+    }
+    .contact-container{
+        padding:5px;
     }
     .contact-box textarea{
         display:flex;
-        align-items:center;
+        align-items:start;
     }
     .contact-box .input-field{
-        text-align: center !important;
         font-size:14px;
     }
+    .contact-box input[type="tel"]{
+        align-items: end !important;
+    }
     .contact-box h2{
-        font-size:18px;
+        font-size:16px;
     }
   }
   
