@@ -1372,6 +1372,9 @@ footer::before{
     .worktime-box{
         width: 300px;
     }
+    .worktime-slots i{
+        transform:translate(0,-2px) !important;
+    }
 }
 @media(max-width:450px){
     .worktime-container{
