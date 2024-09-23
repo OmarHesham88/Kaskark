@@ -19,7 +19,8 @@ ol {
     padding: 0;
     margin: 0;
 }
-input:focus::placeholder{
+input:focus::placeholder,
+textarea:focus::placeholder{
     color:transparent;
 }
 
@@ -556,7 +557,7 @@ nav li:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     width: 220px; /* Fixed width */
     height: auto; /* Fixed height */
     text-align: center;
@@ -1202,7 +1203,7 @@ footer::before{
 /* Branches  Page*/
 
 .branches-container{
-    margin: 60px 0 70px 0;
+    margin: 60px 0 30px 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(50px,350px));
     gap: 60px;
@@ -1247,6 +1248,11 @@ footer::before{
         gap: 20px;
         justify-content: center;
     }
+    .branch-box div img:nth-child(2){
+        position:absolute;
+        left:-20px;
+        top:3px;
+    }
 
     .branch-box div{
         padding-right:5px;
@@ -1268,8 +1274,53 @@ footer::before{
     }
 }
 
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    margin-bottom:70px;
+  }
+  
+  .page-arrow, .page-number {
+    padding: 5px 15px;
+    font-size: 18px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    border-radius: 5px;
+    margin:0 1px;
+  }
+  .page-arrow i{
+    transition: 0.1s !important;
+  }
+  
+  .page-arrow:hover, .page-number:hover {
+    background-color: var(--third-color);
+    color:white;
+  }
+  
+  .selected {
+    background-color: var(--third-color);
+    color: white;
+  }
+  .selected:hover{
+    background-color: var(--third-color);
+  }
+  
+  .page-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .page-arrow i {
+    font-size: 16px;
+  }
 
+@media(max-width:750px){
 
+}
 
 /*================================= Work Time Page=================================== */
 
@@ -1310,9 +1361,33 @@ footer::before{
     line-height: 40px;
     margin-bottom:0;
 }
+.worktime-box img{
+    width:32px;
+    margin-left:5px;
+}
 @media(max-width:550px){
     .worktime-box{
         width: 300px;
+    }
+}
+@media(max-width:450px){
+    .worktime-container{
+        grid-template-columns:repeat(auto-fill, minmax(0px,200px));
+        gap:30px;
+    }
+    .worktime-box{
+        width: 200px;
+        padding:10px 10px 10px 10px;
+        min-height: 30px;
+    }
+    .worktime-slots{
+        font-size:13px !important;
+        padding:5px;
+        min-height: 50px !important;
+    }
+    .worktime-box img{
+        width:22px;
+        margin-left:5px;
     }
 }
 
@@ -1358,7 +1433,6 @@ footer::before{
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    margin-bottom: 10px;
 }
 
 .input-field {
@@ -1377,7 +1451,6 @@ input[type="tel"] {
 }
 input:focus{
     border: 1px solid #009C92;
-    /* outline: none;  */
     padding: 10px;
 }
 
@@ -1397,7 +1470,7 @@ textarea {
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -1459,13 +1532,71 @@ textarea {
     width: 28px;
     transition: transform 0.3s;
   }
+  .social-icon:nth-child(1) img{
+    width: 23px !important;
+}
   
   .social-icon img:hover {
     transform: scale(1.1);
   }
-  @media(max-width:400px){
+  .contact-item-phone img{
+    transform:translate(0,-3px);
+  }
+  .contact-item-email img{
+    transform:translate(0,2px);
+}
+  @media(max-width:800px){
+    .contact-box{
+        width:400px;
+    }
+    .contact-box button{
+        font-size:14px !important;
+    }
     .contact-info-email{
         font-size:large;
+    }
+    .contact-box .form-group{
+        flex-direction: column;
+        gap:0;
+        margin-bottom:0;
+    }
+    .social-icon {
+        margin: 10px 10px;
+      }
+    
+    /* .social-icon {
+        width: 20px;
+      } */
+    .social-icon img{
+        width:20px !important;
+    }
+    .social-icon:nth-child(1) img{
+        width: 15px !important;
+    }
+    .contact-box h2{
+        text-align: center;
+    }
+    .contact-item:nth-child(2) a{
+        font-size:24px;
+    }
+    .contact-item:nth-child(2) img{
+        transform:translate(0,-2px);
+    }
+  }
+  @media(max-width:500px){
+    .contact-box{
+        width:280px;
+    }
+    .contact-box textarea{
+        display:flex;
+        align-items:center;
+    }
+    .contact-box .input-field{
+        text-align: center !important;
+        font-size:14px;
+    }
+    .contact-box h2{
+        font-size:18px;
     }
   }
   
@@ -1584,3 +1715,8 @@ textarea {
 .menu-box p{
     margin:20px;
 }
+
+
+
+
+/* ================= ourProducts =============================== */
