@@ -1562,6 +1562,9 @@ textarea {
     font-size:23px;
     margin-right:5px;
   }
+  .contact-item-phone i{
+    transform: translate(0px, -1px);
+  }
   @media(max-width:800px){
     .contact-box{
         padding:0;
