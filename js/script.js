@@ -73,3 +73,16 @@ myInterval = setInterval(nextImage, 2000); // Reset the interval to start counti
     e.preventDefault();
 });
 
+
+
+  // search icon in menu page
+
+  document.getElementById("search-icon").addEventListener("click", function() {
+    var searchBox = document.getElementById("menu-search-box");
+    if (searchBox.style.display === "none" || searchBox.style.display === "") {
+      searchBox.style.display = "flex";
+    } else {
+      searchBox.style.display = "none";
+    }
+  });
+  
