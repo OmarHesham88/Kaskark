@@ -1804,6 +1804,12 @@ textarea {
 .menu-search-container{
     display: none;
 }
+#search-icon{
+    padding:5px;
+    background-color:var(--third-color);
+    color:white;
+    border-radius:5px;
+}
 @media(max-width:970px){
     .menu-search-container{
         display: block;
@@ -1834,7 +1840,7 @@ textarea {
 @media(max-width:700px){
     .search-box2{
         display: none;
-        left:0px;
+        left:10px;
         bottom:-35px;
         max-width: 200px;
     }
