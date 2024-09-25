@@ -186,12 +186,9 @@
 <!-- ============================================= -->
 <div class="food-menu-container">
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
-        <div class="search-box d-flex justify-content-center w-25 m-2">
-            <input type="search" placeholder="ابحث هنا" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">بحث</button>
-        </div>
-        <div class="container menu-nav-container p-0">
-        <ul class="navbar-nav menu-items">
+        
+        <div class="menu-nav-container">
+            <ul class="navbar-nav menu-items">
             <li class="menu-items-list"><a href="#" class="nav-link active">
                 <img src="images/line-chart-up-01.png" width="20px">
                 الأكثر مبيعا</a></li>
@@ -199,23 +196,29 @@
                 <img src="images/pizza 2.png" width="20px">
                 الفطائر</a></li>
             <li class="menu-items-list"><a href="#menu-karak" class="nav-link">
-                <i class="fas fa-mug-hot"></i>
+                <i class="fas fa-mug-hot" style="transform: translate(0px, -20%);"></i>
                 الكرك</a></li>
-            <li class="menu-items-list"><a href="#" class="nav-link">
+            <li class="menu-items-list"><a href="#menu-hot-drinks" class="nav-link">
                 <img src="images/Coffee-Takeaway-Cup--Streamline-Plump.png" width="20px">
                 مشروبات ساخنة</a></li>
-            <li class="menu-items-list"><a href="#" class="nav-link">
+            <li class="menu-items-list"><a href="#menu-cold-drinks" class="nav-link">
                 <img src="images/juice 2.png" width="20px">
                 مشروبات باردة</a></li>
-            <li class="menu-items-list"><a href="#" class="nav-link">
+            <li class="menu-items-list"><a href="#menu-extras" class="nav-link">
                 <img src="images/french fries.png" width="20px">
                 الاضافات</a></li>
         </ul>
     </div>
+    <div class="search-box">
+        <input type="text" placeholder="ابحث هنا">
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
 </nav>
 
 <!-- Section Title -->
-<div class="container">
+<div class="menu-header-container">
     <h2 id="menu-cakes" class="text-end text-danger">
         <img src="images/pizza 1.png" width="40px">
         الفطائر
@@ -332,7 +335,7 @@
     </div>
 
 </div>
-    <div class="container">
+    <div class="menu-header-container">
     <h2 id="menu-karak" class="text-end text-danger">
         <img src="images/Cup of tea 2.png" width="25px">
         الكرك</h2>
@@ -446,6 +449,24 @@
                 <p>فطيرة بجبنة كيرى مع زعتر</p>
         </div>
     
+    </div>
+
+    <div class="menu-header-container">
+        <h2 id="menu-hot-drinks" class="text-end text-danger">
+            <img src="images/wineglass 1.png" width="30px">
+            مشروبات ساخنة</h2>
+    </div>
+
+    <div class="menu-header-container">
+        <h2 id="menu-cold-drinks" class="text-end text-danger">
+            <img src="images/wineglass 1.png" width="30px">
+            مشروبات باردة</h2>
+    </div>
+
+    <div class="menu-header-container">
+        <h2 id="menu-extras" class="text-end text-danger">
+            <img src="images/cookie.png" width="25px">
+            الاضافات</h2>
     </div>
 
 
