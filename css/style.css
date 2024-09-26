@@ -1903,8 +1903,8 @@ textarea {
 .menu-box-details div:nth-child(2){
     padding: 2px 8px;
     margin-bottom: 5px;
-    height:26px;
-    transform:translateY(-1px);
+    height:25px;
+    transform:translateY(-2px);
     background-color: var(--secondary-color);
 }
 .menu-box h2{
