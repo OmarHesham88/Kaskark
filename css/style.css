@@ -1900,9 +1900,9 @@ textarea {
     font-weight: 500;
 }
 .menu-box-details div:nth-child(2){
-    padding:1px 8px;
-    margin-bottom:5px;
-    transform: translate(0,-1px);
+    padding: 3px 8px;
+    margin-bottom: 4px;
+    transform: translate(0, -1px);
     background-color: var(--secondary-color);
 }
 .menu-box h2{
