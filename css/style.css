@@ -258,7 +258,6 @@ nav li:hover {
     }
     .sidebar {
     position: absolute;
-    overflow:hidden;
     position:fixed;
     top: 0;
     right: -250px;
@@ -267,6 +266,7 @@ nav li:hover {
     background-color: var(--secondary-color);
     transition: right 0.3s;
     z-index:10;
+    overflow-y: scroll;
 }
 @media(max-width:360px){
     .sidebar{
@@ -1792,9 +1792,6 @@ textarea {
         display: none;
     }
 }
-@media(max-width:400px){
-
-}
 
   .search-box2 {
     display: none;
@@ -1803,7 +1800,7 @@ textarea {
     position:absolute;
     width: 100%;
 }
-@media(max-width:970px){
+@media (min-width: 701px) and (max-width: 970px) {
     .search-box2{
         display: flex;
         left:50px;
@@ -1900,9 +1897,8 @@ textarea {
     font-weight: 500;
 }
 .menu-box-details div:nth-child(2){
-    padding: 3px 8px;
-    margin-bottom: 4px;
-    transform: translate(0, -1px);
+    padding: 2px 8px;
+    margin-bottom: 5px;
     background-color: var(--secondary-color);
 }
 .menu-box h2{
