@@ -1026,8 +1026,9 @@ footer::before{
 .images-main-container{
     background-color: #FEB952;
     overflow: hidden;
-    margin: 20px 0 20px 0;
+    margin: 20px 0 10px 0;
 }
+
 .right-side-content{
     position: relative;
     z-index: 5;
@@ -1631,7 +1632,7 @@ textarea {
   /* ========================== Menu Page ==================================== */
     .food-menu-container{
         margin: 0 0 30px 0;
-        padding: 0 20px 20px 20px;
+        padding: 0 0 20px 0;
 
     }
 .menu-nav-container {
@@ -1639,7 +1640,6 @@ textarea {
     justify-content: flex-start;
     align-items: center;
     overflow-x: auto;
-    white-space: nowrap;
     gap: 20px;
     height: 60px;
 }
@@ -1658,7 +1658,7 @@ textarea {
 /* Menu styles */
 .navbar-nav {
     display: flex;
-    flex-direction: row; /* Horizontal arrangement */
+    flex-direction: row; 
     list-style: none;
     padding-left: 0;
     margin: 0;
@@ -1667,7 +1667,6 @@ textarea {
 .menu-items {
     border-bottom: 2px solid #eee;
     display: flex;
-    flex-direction: row;
     flex-shrink: 0;
 }
 
@@ -1700,8 +1699,8 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px; /* Fixed width */
-    height: 45px; /* Fixed height */
+    width: 150px;
+    height: 45px; 
     text-align: center;
     background-color: var(--fourth-color);
     color: white;
@@ -1712,15 +1711,12 @@ textarea {
     padding: 10px;
 }
 
-/* Active link styles */
 .menu-items .nav-link.active,
 .menu-items .nav-link.active ~ .menu-items-list {
     color: white !important;
     background-color: var(--third-color) !important;
 }
 
-/* Search box styles */
-/* Search box is sticky horizontally but not vertically */
 .search-box,
 .search-box2 {
     display: flex;
@@ -1729,14 +1725,13 @@ textarea {
     border-radius: 5px;
     padding: 5px;
     max-width: 250px;
-    flex-shrink: 0; /* Prevents the search box from shrinking */
+    flex-shrink: 0; 
     background-color: #fff;
     height: 40px;
 }
 
 
 
-/* Input field */
 .search-box input,
 .search-box2 input {
     border: none;
@@ -1749,13 +1744,11 @@ textarea {
     width: 180px;
 }
 
-/* Placeholder color */
 .search-box input::placeholder,
 .search-box2 input::placeholder {
     color: #C0C0C0;
 }
 
-/* Button (icon) styles */
 .search-box button,
 .search-box2 button {
     background: none;
@@ -1770,34 +1763,15 @@ textarea {
     font-size: 16px;
 }
 
-/* Hover effect on search button */
 .search-box button:hover i,
 .search-box2 button:hover i {
     color: var(--fourth-color);
 }
-
-/* Media queries for responsiveness */
-@media (min-width: 992px) {
-    .navbar-custom {
-        flex-direction: row;
-    }
-}
 .menu-items{
     border-bottom:transparent;
 }
-/* 
-@media(max-width:993px){
-    .navbar-custom{
-        border-bottom:0 transparent;
-        flex-wrap:wrap !important;
-    }
-    .menu-items{
-        border-bottom:2px solid #eee;
-    }
-    
-} */
 
-/* -------------------------------------------- */
+
 .menu-header-container{
     position:relative;
 }
@@ -1817,6 +1791,9 @@ textarea {
     .search-box{
         display: none;
     }
+}
+@media(max-width:400px){
+
 }
 
   .search-box2 {
@@ -1841,11 +1818,15 @@ textarea {
     .search-box2{
         display: none;
         left:10px;
-        bottom:-35px;
+        bottom:-40px;
         max-width: 200px;
+
     }
     #search-icon{
         display: block;
+    }
+    .menu-search-container{
+        margin-left:10%;
     }
     .menu-header-container{
         padding:0;
@@ -1860,39 +1841,15 @@ textarea {
     cursor: pointer;
   }
   
-
-
-
-
-/* ----------------------------------------------- */
-
-  /* .product-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
-    text-align: center;
-    background-color: #f8f9fa;
+.menu-header-container h2{
+    margin-right:3%;
 }
-.product-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+@media(max-width:380px){
+    .menu-header-container h2{
+        margin-left:0;
+    }
 }
-.product-title {
-    font-size: 1.2em;
-    margin-top: 10px;
-    font-weight: bold;
-}
-.product-description {
-    font-size: 0.9em;
-    color: #666;
-}
-.product-price-calories {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
-} */
+
 
 
 .menu-container{
@@ -1943,7 +1900,9 @@ textarea {
     font-weight: 500;
 }
 .menu-box-details div:nth-child(2){
-    padding:2px 8px;
+    padding:1px 8px;
+    margin-bottom:5px;
+    transform: translate(0,-1px);
     background-color: var(--secondary-color);
 }
 .menu-box h2{
@@ -1958,4 +1917,3 @@ textarea {
 
 
 
-/* ================= ourProducts =============================== */
