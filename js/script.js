@@ -116,3 +116,17 @@ document.querySelectorAll('.nav-link').forEach(link => {
         }
     });
 });
+
+// 
+
+// Listen for clicks on the pagination container
+// document.querySelector('.page-numbers').addEventListener('click', function(event) {
+//   if(event.target.classList.contains('page-number')) {
+//       document.querySelectorAll('.page-number').forEach(button => {
+//           button.classList.remove('selected');
+//       });
+
+//       event.target.classList.add('selected');
+//   }
+// });
+
