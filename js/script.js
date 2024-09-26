@@ -86,3 +86,33 @@ myInterval = setInterval(nextImage, 2000); // Reset the interval to start counti
     }
   });
   
+
+
+
+// scrolling functionality in menu-page
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); 
+
+        // Removing the 'active' class from all nav links
+        document.querySelectorAll('.nav-link').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        this.classList.add('active');
+
+        const targetId = this.getAttribute('href').substring(1); // Get the id without the '#'
+        const targetElement = document.getElementById(targetId); // Find the target element
+        
+        if (targetElement) {
+            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY; // Get element's position
+            const offset = 80; 
+            
+            window.scrollTo({
+                top: targetPosition - offset, // Scroll to the target position minus the offset
+                behavior: 'smooth'
+            })
+        }
+    });
+});
