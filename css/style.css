@@ -1800,18 +1800,20 @@ textarea {
     position:absolute;
     width: 100%;
 }
+
+/* //////////fd f f f f f f f flasst */
 @media (min-width: 701px) and (max-width: 970px) {
-    .search-box2{
-        display: flex;
+    /* .search-box2{
         left:50px;
         bottom:0px;
-    }
-    #search-icon{
-        display: none;
-    }
+    } */
+    /* #search-icon{
+        display: block;
+    } */
+
 
 }
-@media(max-width:700px){
+@media(max-width:970px){
     .search-box2{
         display: none;
         left:calc(10% + 8px);
