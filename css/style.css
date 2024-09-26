@@ -1645,6 +1645,9 @@ textarea {
 }
 
 .navbar-custom {
+    position:sticky;
+    top:0;
+    z-index:3;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -1825,7 +1828,7 @@ textarea {
         display: block;
     }
     .menu-search-container{
-        margin-left:10%;
+        margin-left:6%;
     }
     .menu-header-container{
         padding:0;
@@ -1852,7 +1855,6 @@ textarea {
 
 
 .menu-container{
-    margin: 20px 0 20px 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(50px,300px));
     gap: 20px;
@@ -1901,6 +1903,8 @@ textarea {
 .menu-box-details div:nth-child(2){
     padding: 2px 8px;
     margin-bottom: 5px;
+    height:26px;
+    transform:translateY(-1px);
     background-color: var(--secondary-color);
 }
 .menu-box h2{
