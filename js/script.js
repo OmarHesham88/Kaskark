@@ -12,17 +12,16 @@ function toggleSidebar() {
     }
   })
 
-  
+  // main page images load at the same time & smoothly
   const headerImages = document.querySelectorAll('.image-grid img'); // Selecting images in the image-grid class
   let loadedImagesCount = 0;
   
   headerImages.forEach(img => {
       const imgClone = new Image();
-      imgClone.src = img.src; // Preload the image
+      imgClone.src = img.src; 
       imgClone.onload = () => {
           loadedImagesCount++;
           if (loadedImagesCount === headerImages.length) {
-              // Once all images are loaded, show them
               headerImages.forEach(image => image.classList.add('loaded'));
           }
       };
@@ -137,6 +136,14 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+
+
+
+
+
+
+
+
 // 
 
 // Listen for clicks on the pagination container
@@ -149,5 +156,9 @@ document.querySelectorAll('.nav-link').forEach(link => {
 //       event.target.classList.add('selected');
 //   }
 // });
+
+
+
+
 
 

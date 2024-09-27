@@ -307,6 +307,11 @@ nav li:hover {
     border-bottom: 1px solid var(--default);
     margin:0 10px 10px 0;
   }
+  .sidebar .active{
+    transform: scale(1.05);
+    background-color: var(--third-color);
+    border-bottom:transparent;
+  }
   .test li:hover{
     transform:scale(1.1);
   }
@@ -1527,9 +1532,12 @@ textarea {
   .contact-info {
       color: #009C92;
       font-size: xx-large;
-    font-weight: bold;
-    text-decoration: none;
-    margin:10px 0;
+      font-weight: bold;
+      text-decoration: none;
+      margin:10px 0;
+  }
+  .contact-info-email{
+    font-size:x-large;
   }
   
   .contact-info:hover {
@@ -1560,6 +1568,7 @@ textarea {
   .contact-item-email img{
     transform:translate(0,0px);
 }
+
   .contact-item i{
     font-size:23px;
     margin-right:5px;
@@ -1860,6 +1869,7 @@ textarea {
   
 .menu-header-container h2{
     margin-right:3%;
+    font-size:26px; 
 }
 @media(max-width:380px){
     .menu-header-container h2{
@@ -1930,6 +1940,20 @@ textarea {
 .menu-box p{
     margin:20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
