@@ -405,7 +405,15 @@ nav li:hover {
     width: calc(100% + 3px);
     max-height: 70vh;
     object-fit: cover;
+    opacity:0;
+    transition: opacity 0.5s ease;
 }
+.image-grid img.loaded {
+    opacity: 1;
+}
+
+
+
 .image-grid img:nth-child(1){
     object-fit: cover;
 }
