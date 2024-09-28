@@ -243,41 +243,40 @@ const selectedBox = document.querySelector('.selectedd');
 const overlay = document.querySelector('.overlay');
 const content = document.querySelector('.content');
 
+function handleInteraction(box, e) {
+  e.stopPropagation();
+
+  content.classList.add('background-blur');
+  overlay.style.display = 'block';
+
+  const imgSrc = box.querySelector('img').src;
+  const price = box.querySelector('.menu-box-details .price').innerText;
+  const calories = box.querySelector('.menu-box-details .calories').innerText;
+  const title = box.querySelector('h2').innerText;
+  const description = box.querySelector('p').innerText;
+
+  selectedBox.querySelector('img').src = imgSrc;
+
+  selectedBox.querySelector('.menu-box-details .price').innerHTML = price;
+  selectedBox.querySelector('.menu-box-details .calories').innerText = calories;
+
+  selectedBox.querySelector('h2').innerText = title;
+  selectedBox.querySelector('p').innerText = description;
+
+  selectedBox.style.display = 'block';
+  selectedBox.classList.add('selectedd'); 
+}
+
 menuBoxes.forEach(box => {
-    box.addEventListener('click', (e) => {
-        // Prevent this click from triggering the "outside" click handler
-        e.stopPropagation();
-
-        content.classList.add('background-blur');
-        overlay.style.display = 'block'; 
-
-        const imgSrc = box.querySelector('img').src;
-        const price = box.querySelector('.menu-box-details .price').innerText;
-        const calories = box.querySelector('.menu-box-details .calories').innerText;
-        const title = box.querySelector('h2').innerText;
-        const description = box.querySelector('p').innerText;
-
-        selectedBox.querySelector('img').src = imgSrc;
-
-        // Set the text next to .fa-tag and .fa-fire for price and calories
-        selectedBox.querySelector('.menu-box-details .price').innerHTML = price;
-        selectedBox.querySelector('.menu-box-details .calories').innerText = calories;
-
-        selectedBox.querySelector('h2').innerText = title;
-        selectedBox.querySelector('p').innerText = description;
-
-        selectedBox.style.display = 'block';
-        selectedBox.classList.add('selectedd'); // Ensure the class is added for styling
-    });
+  box.addEventListener('click', (e) => handleInteraction(box, e)); 
+  box.addEventListener('touchstart', (e) => handleInteraction(box, e)); // For mobile responsiveness
 });
 
-// Hide selectedBox and remove blur when clicking outside of selectedBox
 document.addEventListener('click', (e) => {
-    // Check if the click was outside the selectedBox
-    if (!selectedBox.contains(e.target)) {
-        selectedBox.style.display = 'none';
-        selectedBox.classList.remove('selectedd');
-        content.classList.remove('background-blur');
-        overlay.style.display = 'none';
-    }
+  if (!selectedBox.contains(e.target)) {
+      selectedBox.style.display = 'none';
+      selectedBox.classList.remove('selectedd');
+      content.classList.remove('background-blur');
+      overlay.style.display = 'none';
+  }
 });
