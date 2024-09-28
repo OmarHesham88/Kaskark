@@ -243,40 +243,72 @@ const selectedBox = document.querySelector('.selectedd');
 const overlay = document.querySelector('.overlay');
 const content = document.querySelector('.content');
 
+// Variables to store touch coordinates
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
+// Helper function to handle both click and touchend events
 function handleInteraction(box, e) {
-  e.stopPropagation();
+    // Prevent this click from triggering the "outside" click handler
+    e.stopPropagation();
 
-  content.classList.add('background-blur');
-  overlay.style.display = 'block';
+    content.classList.add('background-blur');
+    overlay.style.display = 'block';
 
-  const imgSrc = box.querySelector('img').src;
-  const price = box.querySelector('.menu-box-details .price').innerText;
-  const calories = box.querySelector('.menu-box-details .calories').innerText;
-  const title = box.querySelector('h2').innerText;
-  const description = box.querySelector('p').innerText;
+    const imgSrc = box.querySelector('img').src;
+    const price = box.querySelector('.menu-box-details .price').innerText;
+    const calories = box.querySelector('.menu-box-details .calories').innerText;
+    const title = box.querySelector('h2').innerText;
+    const description = box.querySelector('p').innerText;
 
-  selectedBox.querySelector('img').src = imgSrc;
+    selectedBox.querySelector('img').src = imgSrc;
 
-  selectedBox.querySelector('.menu-box-details .price').innerHTML = price;
-  selectedBox.querySelector('.menu-box-details .calories').innerText = calories;
+    // Set the text inside the .price and .calories span elements in the selectedBox
+    selectedBox.querySelector('.menu-box-details .price').innerHTML = price;
+    selectedBox.querySelector('.menu-box-details .calories').innerText = calories;
 
-  selectedBox.querySelector('h2').innerText = title;
-  selectedBox.querySelector('p').innerText = description;
+    selectedBox.querySelector('h2').innerText = title;
+    selectedBox.querySelector('p').innerText = description;
 
-  selectedBox.style.display = 'block';
-  selectedBox.classList.add('selectedd'); 
+    selectedBox.style.display = 'block';
+    selectedBox.classList.add('selectedd'); // Ensure the class is added for styling
 }
 
+// Event listener for each menu box
 menuBoxes.forEach(box => {
-  box.addEventListener('click', (e) => handleInteraction(box, e)); 
-  box.addEventListener('touchstart', (e) => handleInteraction(box, e)); // For mobile responsiveness
+    // Handle click for desktop
+    box.addEventListener('click', (e) => handleInteraction(box, e));
+
+    // Handle touch events for mobile
+    box.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    });
+
+    box.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        touchEndY = e.changedTouches[0].clientY;
+
+        // Calculate the distance between the start and end touch positions
+        const distanceX = Math.abs(touchStartX - touchEndX);
+        const distanceY = Math.abs(touchStartY - touchEndY);
+
+        // Only trigger the interaction if the touch was not a scroll/swipe
+        if (distanceX < 10 && distanceY < 10) {
+            handleInteraction(box, e);
+        }
+    });
 });
 
+// Hide selectedBox and remove blur when clicking outside of selectedBox
 document.addEventListener('click', (e) => {
-  if (!selectedBox.contains(e.target)) {
-      selectedBox.style.display = 'none';
-      selectedBox.classList.remove('selectedd');
-      content.classList.remove('background-blur');
-      overlay.style.display = 'none';
-  }
+    if (!selectedBox.contains(e.target)) {
+        selectedBox.style.display = 'none';
+        selectedBox.classList.remove('selectedd');
+        content.classList.remove('background-blur');
+        overlay.style.display = 'none';
+    }
 });
+
