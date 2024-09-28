@@ -308,10 +308,15 @@ nav li:hover {
     margin:0 10px 10px 0;
   }
   .sidebar .active{
-    transform: scale(1.05);
-    background-color: var(--third-color);
-    border-bottom:transparent;
-  }
+    transform: scale(1.08);
+
+    /*color:var(--third-color);
+    font-weight: bold;
+    background-blend-mode: darken; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: var(--third-color, rgba(255, 204, 0, 0.2)); /* Light gold with opacity */
+    }
+    
   .test li:hover{
     transform:scale(1.1);
   }
