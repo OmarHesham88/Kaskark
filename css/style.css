@@ -1182,14 +1182,16 @@ footer::before{
 
 
 
-.about-text{
+.text-content-page p{
     color:#BF3337;
-    font-size:large;
+    font-size:14px;
     font-weight:500;
     padding:20px;
     line-height: 30px;
     margin-bottom:60px;
+    font-family: "cairo";
 }
+
 
 
 
@@ -1714,6 +1716,7 @@ textarea {
     padding: 5px 10px;
     width: auto;
     height: auto;
+    color:white !important;
 }
 
 .menu-items li:hover,

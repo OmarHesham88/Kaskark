@@ -160,5 +160,33 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 
+// scrolling functionality in menu-page 
+
+const navItems = document.querySelectorAll('.nav-link');
+const productCategories = document.querySelectorAll('.menu-category-container'); 
+let previousCategory = '';
+
+window.addEventListener('scroll', () => {
+    let current = '';
+
+    productCategories.forEach(category => {
+        const { top, bottom } = category.getBoundingClientRect();
+        const categoryId = category.querySelector('h2').getAttribute('id');
+
+        if (top <= window.innerHeight / 3 && bottom >= 0) {
+            current = categoryId; 
+        }
+    });
 
 
+    if (current !== previousCategory) {
+        navItems.forEach(item => {
+            if (item.getAttribute('href') === `#${current}`) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+        previousCategory = current;
+    }
+});
