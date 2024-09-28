@@ -170,7 +170,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 
-// scrolling functionality in menu-page 
+// Menu-Page => scrolling functionality
 
 const navItems = document.querySelectorAll('.nav-link');
 const productCategories = document.querySelectorAll('.menu-category-container'); 
@@ -200,3 +200,48 @@ window.addEventListener('scroll', () => {
         previousCategory = current;
     }
 });
+
+
+
+
+
+
+
+
+
+
+// Menu-page => To apply the blur effect when I search on a product
+function focusElement(element) {
+  element.classList.remove('hidden');
+  element.classList.add('selectedd');
+  element.style.display = 'block'; 
+  
+
+  document.querySelector('.content').classList.add('background-blur');
+  document.querySelector('.overlay').style.display = 'block';
+}
+
+function resetFocus() {
+  const focusedElement = document.querySelector('.selectedd');
+  if (focusedElement) {
+    focusedElement.classList.remove('selectedd');
+    focusedElement.classList.add('hidden');
+          
+  }
+  document.querySelector('.content').classList.remove('background-blur');
+
+  if (!document.querySelector('.selectedd')) {
+      document.querySelector('.overlay').style.display = 'none';
+  }
+}
+
+document.querySelector('.overlay').addEventListener('click', resetFocus);
+document.addEventListener('click', (event) => {
+  const focusedElement = document.querySelector('.selectedd');
+  if (focusedElement && !focusedElement.contains(event.target)) {
+      resetFocus();
+  }
+});
+
+
+resetFocus();
