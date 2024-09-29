@@ -32,21 +32,25 @@
     <!-- This part of the code is related to products search -->
     <div class="overlay"></div>
 
-    <div class="menu-box selectedd" style="display:none;">
-        <img src="images/Rectangle 4131.png" >
+    <div class="menu-box2 selectedd" style="display:none;">
+        <div class="menu-close-icon">
+            &times; 
+        </div>
+        <img src="images/Rectangle 4131.png">
         <div class="menu-box-details">
             <div>
                 <i class="fas fa-tag"></i>
-                <span class="price">  10 ريال</span>
-              </div>
+                <span class="price">10 ريال</span>
+            </div>
             <div>
                 <i class="fa-solid fa-fire"></i>
                 <span class="calories">250</span>
-                 </div>
+            </div>
         </div>
         <h2>فطيرة بجبنة كيرى مع زعتر</h2>
         <p>فطيرة بجبنة كيرى مع زعتر</p>
     </div>
+    
     
     
     <div class="content">
@@ -238,11 +242,13 @@
 
 <!-- we have 2 search box, this is the first one -->
 <div class="search-box">
-    <input type="text" placeholder="ابحث هنا">
-    <button type="submit">
-      <i class="fa fa-search"></i>
+    <input type="text" onfocus="this.value=''" id="product-search" placeholder="ابحث هنا" oninput="filterProducts()" autocomplete="off">
+    <button type="submit" id="search-button">
+        <i class="fa fa-search"></i>
     </button>
-  </div>
+    <div id="dropdown" class="dropdown-list"></div>
+</div>
+
 </nav>
 <div class="food-menu-container">
 
@@ -256,11 +262,13 @@
     <!-- second search box  -->
     <div class="menu-search-container">
         <div class="search-box2" id="menu-search-box" style="height: 40px;">
-            <input type="text" placeholder="ابحث هنا">
-            <button type="submit">
-              <i class="fa fa-search"></i>
+            <input type="text" onfocus="this.value=''" id="product-search2" placeholder="ابحث هنا" autocomplete="off">
+            <button type="submit" id="search-button2">
+                <i class="fa fa-search"></i>
             </button>
-          </div>
+            <div id="dropdown2" class="dropdown-list"></div> 
+        </div>
+          
         <i class="fas fa-search" id="search-icon"></i>
       </div>
       
@@ -283,7 +291,7 @@
                 <span class="calories">250</span>
                  </div>
         </div>
-        <h2>بجبنة كيرى مع زعتر</h2>
+        <h2>منتج  كيرى مع زعتر</h2>
         <p>فطيرة بجبنة كيرى مع زعتر</p>
     </div>
     <div class="menu-box">
@@ -298,7 +306,7 @@
                 <span class="calories">250</span>
                  </div>
         </div>
-        <h2>بجبنة كيرى مع زعتر</h2>
+        <h2>منتج كيرى بدون زعتر</h2>
         <p>فطيرة بجبنة كيرى مع زعتر</p>
     </div>
     <div class="menu-box">

@@ -15,7 +15,7 @@ function toggleSidebar() {
   // main page images load at the same time & smoothly
   const headerImages = document.querySelectorAll('.image-grid img'); // Selecting images in the image-grid class
   let loadedImagesCount = 0;
-  
+
   headerImages.forEach(img => {
       const imgClone = new Image();
       imgClone.src = img.src; 
@@ -67,7 +67,7 @@ for (let i = 0; i < carouselImages.length; i++) {
 }
 }
 
-let myInterval = setInterval(nextImage, 2000); // Declare the interval outside
+let myInterval = setInterval(nextImage, 2000);
 
 function nextImage() {
 images.push(images.shift());
@@ -75,7 +75,7 @@ updateCarousel();
 
 clearInterval(myInterval);
 
-myInterval = setInterval(nextImage, 2000); // Reset the interval to start counting from 0
+myInterval = setInterval(nextImage, 2000); 
 }
 function prevImage() {
   images.unshift(images.pop());
@@ -83,8 +83,7 @@ function prevImage() {
 
 clearInterval(myInterval);
 
-myInterval = setInterval(nextImage, 2000); // Reset the interval to start counting from 0
-
+myInterval = setInterval(nextImage, 2000);
 }
 
   // prevent zooming on Iphone
@@ -174,6 +173,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 const navItems = document.querySelectorAll('.nav-link');
 const productCategories = document.querySelectorAll('.menu-category-container'); 
+const menuNavContainer = document.querySelector('.menu-nav-container'); // The scrollable container
 let previousCategory = '';
 
 window.addEventListener('scroll', () => {
@@ -188,11 +188,20 @@ window.addEventListener('scroll', () => {
         }
     });
 
-
     if (current !== previousCategory) {
         navItems.forEach(item => {
             if (item.getAttribute('href') === `#${current}`) {
                 item.classList.add('active');
+                const containerRect = menuNavContainer.getBoundingClientRect();
+                const linkRect = item.getBoundingClientRect();
+
+                if (linkRect.left < containerRect.left || linkRect.right > containerRect.right) {
+                    menuNavContainer.scrollTo({
+                        left: item.offsetLeft - menuNavContainer.offsetWidth / 2 + item.offsetWidth / 2,
+                        behavior: 'smooth'
+                    });
+                }
+
             } else {
                 item.classList.remove('active');
             }
@@ -218,97 +227,121 @@ window.addEventListener('scroll', () => {
 //   document.querySelector('.overlay').style.display = 'block';
 // }
 
-function resetFocus() {
-  let focusedElement = document.querySelector('.selectedd');
-  if (focusedElement) {
-    focusedElement.style.display = 'none';
-          
+document.addEventListener('DOMContentLoaded', function () {
+  function resetFocus() {
+      let focusedElement = document.querySelector('.selectedd');
+      if (focusedElement) {
+          focusedElement.style.display = 'none';
+      }
+      document.querySelector('.content').classList.remove('background-blur');
   }
-}
-  document.querySelector('.content').classList.remove('background-blur');
 
-//   if (!document.querySelector('.selectedd')) {
-//       document.querySelector('.overlay').style.display = 'none';
-//   }
-// }
+  // Select elements
+  const menuBoxes = document.querySelectorAll('.menu-box');
+  const selectedBox = document.querySelector('.selectedd');
+  const overlay = document.querySelector('.overlay');
+  const content = document.querySelector('.content');
 
+  // Array to store product names
+  const products = Array.from(menuBoxes).map(box => box.querySelector('h2').innerText);
 
+  // Helper function to handle selection interaction
+  function handleSelection(box) {
+      content.classList.add('background-blur');
+      console.log("i'm working");
+      overlay.style.display = 'block';
+      const imgSrc = box.querySelector('img').src;
+      const price = box.querySelector('.menu-box-details .price').innerText;
+      const calories = box.querySelector('.menu-box-details .calories').innerText;
+      const title = box.querySelector('h2').innerText;
+      const description = box.querySelector('p').innerText;
 
+      selectedBox.querySelector('img').src = imgSrc;
 
+      // Set the text inside the .price and .calories span elements in the selectedBox
+      selectedBox.querySelector('.menu-box-details .price').innerHTML = price;
+      selectedBox.querySelector('.menu-box-details .calories').innerText = calories;
 
+      selectedBox.querySelector('h2').innerText = title;
+      selectedBox.querySelector('p').innerText = description;
 
+      selectedBox.style.display = 'block';
+      selectedBox.classList.add('selectedd'); // Ensure the class is added for styling
+  }
 
-const menuBoxes = document.querySelectorAll('.menu-box');
-const selectedBox = document.querySelector('.selectedd');
-const overlay = document.querySelector('.overlay');
-const content = document.querySelector('.content');
+  // Close the selected box
+  document.querySelector('.menu-close-icon').addEventListener('click', () => {
+      selectedBox.style.display = 'none';
+      content.classList.remove('background-blur');
+      overlay.style.display = 'none';
+  });
 
-// Variables to store touch coordinates
-let touchStartX = 0;
-let touchStartY = 0;
-let touchEndX = 0;
-let touchEndY = 0;
+  // Function to filter products for dropdown search
+  function filterProducts(inputId, dropdownId) {
+      const input = document.getElementById(inputId);
+      const dropdown = document.getElementById(dropdownId);
+      const filter = input.value.toLowerCase();
 
-// Helper function to handle both click and touchend events
-function handleInteraction(box, e) {
-    // Prevent this click from triggering the "outside" click handler
-    e.stopPropagation();
+      // Clear the dropdown
+      dropdown.innerHTML = '';
 
-    content.classList.add('background-blur');
-    overlay.style.display = 'block';
+      // If there's no input, hide the dropdown
+      if (!filter) {
+          dropdown.style.display = 'none';
+          return;
+      }
 
-    const imgSrc = box.querySelector('img').src;
-    const price = box.querySelector('.menu-box-details .price').innerText;
-    const calories = box.querySelector('.menu-box-details .calories').innerText;
-    const title = box.querySelector('h2').innerText;
-    const description = box.querySelector('p').innerText;
+      // Filter the products
+      const filteredProducts = products.filter(product => product.toLowerCase().includes(filter));
 
-    selectedBox.querySelector('img').src = imgSrc;
+      // If there are matching products, show them in the dropdown
+      if (filteredProducts.length > 0) {
+          filteredProducts.forEach(product => {
+              const item = document.createElement("div");
+              item.className = "dropdown-item";
+              item.textContent = product;
 
-    // Set the text inside the .price and .calories span elements in the selectedBox
-    selectedBox.querySelector('.menu-box-details .price').innerHTML = price;
-    selectedBox.querySelector('.menu-box-details .calories').innerText = calories;
+              item.onclick = () => {
+                  input.value = product; // Set input value to clicked item
+                  dropdown.style.display = 'none'; // Hide dropdown
 
-    selectedBox.querySelector('h2').innerText = title;
-    selectedBox.querySelector('p').innerText = description;
+                  // Find the first corresponding menu box and call handleSelection
+                  for (let box of menuBoxes) {
+                      if (box.querySelector('h2').innerText === product) {
+                          console.log(box);
+                          handleSelection(box); // Trigger the selection interaction
+                          break; // Stop after the first match
+                      }
+                  }
+              };
+              dropdown.appendChild(item);
+          });
 
-    selectedBox.style.display = 'block';
-    selectedBox.classList.add('selectedd'); // Ensure the class is added for styling
-}
+          dropdown.style.display = 'block'; // Show dropdown
+      } else {
+          dropdown.style.display = 'none'; // Hide dropdown if no matches
+      }
+  }
 
-// Event listener for each menu box
-menuBoxes.forEach(box => {
-    // Handle click for desktop
-    box.addEventListener('click', (e) => handleInteraction(box, e));
+  // Add input event listener to the first search input
+  const searchInput1 = document.getElementById('product-search');
+  const searchButton1 = document.getElementById('search-button');
 
-    // Handle touch events for mobile
-    box.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-    });
+  if (searchInput1) {
+      searchInput1.addEventListener('input', () => filterProducts('product-search', 'dropdown'));
+  }
+  searchButton1.addEventListener('click', () => {
+      filterProducts('product-search', 'dropdown');
+  });
 
-    box.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].clientX;
-        touchEndY = e.changedTouches[0].clientY;
+  // Add input event listener to the second search input
+  const searchInput2 = document.getElementById('product-search2');
+  const searchButton2 = document.getElementById('search-button2');
 
-        // Calculate the distance between the start and end touch positions
-        const distanceX = Math.abs(touchStartX - touchEndX);
-        const distanceY = Math.abs(touchStartY - touchEndY);
-
-        // Only trigger the interaction if the touch was not a scroll/swipe
-        if (distanceX < 10 && distanceY < 10) {
-            handleInteraction(box, e);
-        }
-    });
+  if (searchInput2) {
+      searchInput2.addEventListener('input', () => filterProducts('product-search2', 'dropdown2'));
+  }
+  searchButton2.addEventListener('click', () => {
+      filterProducts('product-search2', 'dropdown2');
+  });
 });
-
-// Hide selectedBox and remove blur when clicking outside of selectedBox
-document.addEventListener('click', (e) => {
-    if (!selectedBox.contains(e.target)) {
-        selectedBox.style.display = 'none';
-        selectedBox.classList.remove('selectedd');
-        content.classList.remove('background-blur');
-        overlay.style.display = 'none';
-    }
-});
-
