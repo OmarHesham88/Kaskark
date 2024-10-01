@@ -1782,11 +1782,10 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 20px;
     height: 30px;
     width: 30px;
     left: 10px;
-    padding-bottom: 5px;
     color: white;
     background-color: var(--third-color);
     border-radius: 50%;
