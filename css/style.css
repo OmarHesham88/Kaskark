@@ -1319,13 +1319,13 @@ footer::before{
     margin-bottom:70px;
   }
   
-  .page-arrow, .page-number {
+  .page-arrow, .pagination-btn {
     padding: 5px 15px;
     font-size: 18px;
     border: none;
-    background-color: white;
+    background-color: white !important;
     cursor: pointer;
-    color: black;
+    color: black !important;
     border-radius: 5px;
     margin:0 1px;
   }
@@ -1333,17 +1333,17 @@ footer::before{
     transition: 0.1s !important;
   }
   
-  .page-arrow:hover, .page-number:hover {
-    background-color: var(--third-color);
-    color:white;
+  .page-arrow:hover, .pagination-btn:hover {
+    background-color: var(--third-color) !important;
+    color:white !important;
   }
   
-  .selected {
-    background-color: var(--third-color);
-    color: white;
+  .active-page {
+    background-color: var(--third-color) !important;
+    color: white !important;
   }
-  .selected:hover{
-    background-color: var(--third-color);
+  .active-page:hover{
+    background-color: var(--third-color) !important;
   }
   
   .page-arrow:disabled {
