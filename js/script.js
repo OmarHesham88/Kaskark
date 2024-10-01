@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // branches Pagination
 
 document.addEventListener('DOMContentLoaded', function() {
-    const itemsPerPage = 2; 
+    const itemsPerPage = 6; 
     const branches = document.querySelectorAll('.branch-box'); 
     const totalBranches = branches.length; 
     const totalPages = Math.ceil(totalBranches / itemsPerPage);
