@@ -1785,7 +1785,7 @@ textarea {
     font-size: 20px;
     height: 30px;
     width: 30px;
-    left: 10px;
+    right: 10px;
     color: white;
     background-color: var(--third-color);
     border-radius: 50%;
@@ -1804,7 +1804,10 @@ textarea {
     height: 40px;
 }
 
-
+.search-box2{
+    /* transform: translateX(-20px); */
+    /* margin-left:6%; */
+}
 
 .search-box input,
 .search-box2 input {
@@ -1906,7 +1909,7 @@ textarea {
 @media(max-width:970px){
     .search-box2{
         display: none;
-        left:calc(10% + 8px);
+        left:calc(6% + 5px);
         bottom:-40px;
         max-width: 200px;
 
