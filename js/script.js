@@ -254,20 +254,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     createPaginationButtons();
-    showBranches(1); // Updated function call
+    showBranches(1); 
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   // search icon in menu page
@@ -315,13 +303,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 
-
-
-
-
-
-
-
 // Menu-Page => scrolling functionality
 
 const navItems = document.querySelectorAll('.nav-link');
@@ -362,10 +343,6 @@ window.addEventListener('scroll', () => {
         previousCategory = current;
     }
 });
-
-
-
-
 
 
 

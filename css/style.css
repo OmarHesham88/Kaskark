@@ -745,7 +745,7 @@ nav li:hover {
     left:50%;
     top:20px;
     transform: translateX(-50%);
-    z-index:3;
+    z-index:9;
 }
 .section div img:nth-of-type(2){
     left:calc(50% + 220px);
@@ -763,14 +763,17 @@ nav li:hover {
         left:50%;
         top:20px;
         transform: translateX(-50%);
+        z-index:9;
     }
     .section div img:nth-of-type(2){
         left:calc(50% + 120px);
         transform: rotateY(10deg) translateX(-50%);
+        z-index:1;
     }
     .section div img:nth-of-type(3){
         left:calc(50% - 120px);
         transform: rotateY(-10deg) translateX(-50%);
+        z-index:1;
     }
     .section div img{
         width: 150px;
@@ -847,9 +850,10 @@ footer::before{
 }
 .footer-center img{
     border-radius:20px;
+    transform:translateY(-10px);
 }
 .footer-center img:hover{
-    transform:scale(1.1);
+    transform:translateY(-10px) scale(1.1);
 }
 .footer-policy{
     margin-left:5px;
