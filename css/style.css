@@ -792,6 +792,28 @@ nav li:hover {
     }
 }
 
+@media only screen 
+  and (device-width: 375px) 
+  and (device-height: 812px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+    .section #right-image{
+        z-index:0 !important;
+        transform: rotateY(10deg) translateX(-50%);
+        left:calc(50% + 120px);
+    }
+}
+@media only screen 
+  and (device-width: 375px) 
+  and (device-height: 812px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+    .section #right-image{
+        z-index:0 !important;
+        transform: rotateY(10deg) translateX(-50%);
+        left:calc(50% + 120px);
+    }
+}
 
 
 
