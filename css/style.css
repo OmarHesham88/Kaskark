@@ -758,6 +758,9 @@ nav li:hover {
     transform: rotateY(-10deg) translateX(-50%);
 }
 
+.section #iphoneX-debug-image{
+    display: none;
+}
 @media (max-width:767px) {
     .section div img:nth-of-type(1){
         left:50%;
@@ -785,11 +788,13 @@ nav li:hover {
     .section-images{
         transform: scale(0.80);
     }
+
 }
 @media (min-width:767px){
     .partners-heading{
         margin-top: 100px !important;
     }
+
 }
 
 @media only screen 
@@ -797,10 +802,11 @@ nav li:hover {
   and (device-height: 812px) 
   and (-webkit-device-pixel-ratio: 3) 
   and (orientation: portrait) {
-    .section #right-image{
-        z-index:0 !important;
-        transform: rotateY(10deg) translateX(-50%);
-        left:calc(50% + 120px);
+    .section #iphoneX-debug-image{
+        display: block;
+    }
+    .section .section-images{
+        display: none;
     }
 }
 @media only screen 
@@ -808,11 +814,13 @@ nav li:hover {
   and (device-height: 812px) 
   and (-webkit-device-pixel-ratio: 3) 
   and (orientation: landscape) {
-    .section #right-image{
-        z-index:0 !important;
-        transform: rotateY(10deg) translateX(-50%);
-        left:calc(50% + 120px);
+    .section #iphoneX-debug-image{
+        display: block;
     }
+    .section .section-images{
+        display: none;
+    }
+    
 }
 
 
