@@ -606,6 +606,10 @@ nav li:hover {
     border-radius: 10px;
 }
 
+.products-item h5{
+    min-height: 45px;
+}
+
 .products-items {
     display: flex;
     flex-wrap: wrap; /* Enables wrapping when screen gets smaller */
